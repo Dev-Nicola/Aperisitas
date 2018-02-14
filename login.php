@@ -48,7 +48,7 @@ if(isset($_SESSION['success_message'])) {
             <input type="password" name="password" class="form-control" placeholder="Entrez votre mot de passe">
         </div>
 
-        <button type="submit" class="btn btn-primary">Comfirmer</button>
+        <button type="submit" class="btn btn-primary">Confirmer</button>
     </form>
 
 <?php //include footer ici ?>
