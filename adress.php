@@ -1,6 +1,7 @@
 <?php
 session_start();
 
+
 function createAdress($streetnumber, $streetname, $postalcode, $city, $country){
     $error = '';
 
@@ -17,14 +18,18 @@ function createAdress($streetnumber, $streetname, $postalcode, $city, $country){
     return $error;
 }
 
-if(empty($_POST['streetnumber'])) {
-    $message_error = createAdress('', '', '', '','');
+if(empty($_POST['streetnumber'] || $_POST['streetname'] || $_POST['postalcode'] || $_POST['city'] || $_POST['country'])) {
+    $message_error = createAdress($_POST['streetnumber'], $_POST['streetname'],$_POST['postalcode'], $_POST['city'], $_POST['country']);
+
+    $_SESSION['message_error'] = $message_error;
+    header('Location: form.php'); // changer selon la page du formulaire
+} elseif($_POST['streetnumber'] || $_POST['streetname'] || $_POST['postalcode'] || $_POST['city'] || $_POST['country']){
+    $message_error = createAdress($_POST['streetnumber'], $_POST['streetname'],$_POST['postalcode'], $_POST['city'], $_POST['country']);
 
     $_SESSION['message_error'] = $message_error;
     header('Location: form.php'); // changer selon la page du formulaire
 }
 
-//createAdress($_POST['streetnumber'], $_POST['streetname'], $_POST['postalcode'], $_POST['city'], $_POST['country']);
 
 function lengthPassword($password){
     $error = '';
@@ -34,18 +39,23 @@ function lengthPassword($password){
         $error = 'Votre mot de passe est trop court. Veuillez entrer un mot de passe de 12 caractères ou plus.';
     } elseif (empty($password)){
         $error = 'Vous devez entrer un mot de passe!';
-    } elseif (!preg_match('/0123456789/',$password)){
+    } elseif (preg_match('/\\d/',$password) == false){
         $error = 'Votre mot de passe doit contenir au moins un chiffre.';
     }
 
     return $error;
 }
 
-if(empty($_POST['password'])) {
-    $message_error = lengthPassword('');
+if(empty($_POST['password']) || $_POST['password']){
+    $message_error = lengthPassword($_POST['password']);
 
     $_SESSION['message_error'] = $message_error;
     header('Location: form.php'); // changer selon la page du formulaire
 }
 
-lengthPassword($_POST['password']);
+if($_POST['password']){
+    $message_error = lengthPassword($_POST['password']);
+
+    $_SESSION['message_error'] = $message_error;
+    header('Location: form.php'); // changer selon la page du formulaire
+}
