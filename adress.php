@@ -22,4 +22,13 @@ function createAdress($streetnumber, $streetname, $postalcode, $city, $country){
     }
 }
 
-createAdress($_POST['streetnumber'], $_POST['streetname'], $_POST['postalcode'], $_POST['city'], $_POST['country']);
+//createAdress($_POST['streetnumber'], $_POST['streetname'], $_POST['postalcode'], $_POST['city'], $_POST['country']);
+
+function lengthPassword($password){
+    $error ='';
+
+    if(strleng($password) < 12 ){
+        $error = 'Votre mot de passe est trop court. Veuillez entrer un mot de passe de 12 caractères ou plus.';
+        trigger_error($error,E_USER_ERROR);
+    }
+}
