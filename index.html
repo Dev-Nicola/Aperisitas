@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>IssouGang - Aperisitas</title>
+
+
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+
+    <!-- Plugin CSS -->
+    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="#page-top">IssouGang</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+            <div class="collapse navbar-collapse pull-right" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#produits">Produits</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#issou">Apérisitas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- LOG IN BUTTON -->
+            <a class="fa fa-user fa-2x mb-1" aria-hidden="true" href="#" data-toggle="modal" data-target=".login-register-form"></a>
+
+            <!-- SHOP BUTTON -->
+            <a class="fa fa-shopping-cart fa-2x mb-1" aria-hidden="true" href="#" data-toggle="modal" data-target=".shopModal"></a>
+        </div>
+    </nav>
+
+
+    <!-- LOGIN -->
+    <!-- Trigger the modal with a button -->
+
+    <div class="container modalForm">
+        <div class="row">
+
+
+            <!-- Login / Register Modal-->
+            <div class="modal fade login-register-form" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">
+                                            <span class="glyphicon glyphicon-remove"></span>
+                                        </button>
+                            <ul class="nav nav-tabs">
+                                <div id="seConnecter">
+                                    <li class="active">
+                                        <a data-toggle="tab" href="#login-form">
+
+                                            <h4 class="modal-title ">Se connecter</h4> <span class="glyphicon glyphicon-user"></span></a>
+                                    </li>
+                                </div>
+                                <li>
+                                    <a data-toggle="tab" href="#registration-form">
+                                        <div id="sinscrire">
+                                            <h4 class="modal-title">S'inscrire</h4>
+                                        </div><span class="glyphicon glyphicon-pencil"></span></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="modal-body">
+                            <div class="tab-content">
+                                <div id="login-form" class="tab-pane fade in active">
+                                    <form action="/">
+                                        <div class="form-group">
+                                            <label for="email">Email:</label>
+                                            <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="pwd">Mot de passe :</label>
+                                            <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+                                        </div>
+                                        <button type="submit" class="btn btn-default">Se connecter</button>
+                                    </form>
+                                </div>
+                                <div id="registration-form" class="tab-pane fade">
+                                    <form action="/">
+                                        <div class="form-group">
+                                            <label for="name">Pseudo</label>
+                                            <input type="text" class="form-control" id="name" placeholder="Enter your name" name="name">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="name">Prénom :</label>
+                                            <input type="text" class="form-control" id="name" placeholder="Enter your name" name="name">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="name">Nom :</label>
+                                            <input type="text" class="form-control" id="name" placeholder="Enter your name" name="name">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="newemail">Email:</label>
+                                            <input type="email" class="form-control" id="newemail" placeholder="Enter new email" name="newemail">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="newpwd">Mot de passe :</label>
+                                            <input type="password" class="form-control" id="newpwd" placeholder="New password" name="newpwd">
+                                        </div>
+                                        <button type="submit" class="btn btn-default">S'inscrire</button>
+                                    </form>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- SHOPPING CART -->
+
+
+
+
+
+
+    <div class="modal  fade shopModal" id="cart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+
+                <h5 class="modal-title" id="exampleModalLabel">Votre panier</h5>
+
+                <div class="modal-body">
+                    <table class="show-cart table">
+
+                    </table>
+                    <div>
+                        <p>Prix : €</p><span class="total-cart"></span></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                    <button type="button" class="btn btn-primary">Passer la commande</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <!-- Home -->
+
+    <header class="masthead text-center text-white d-flex">
+        <div class="container my-auto">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <h1 class="text-uppercase">
+                        <strong>VOS GOÛTS PRÉFÉRÉS SONT MAINTENANT DISPONIBLES !</strong>
+                    </h1>
+                    <hr>
+                </div>
+                <div class="col-lg-8 mx-auto">
+                    <p class="text-faded mb-5">Commandez dès maintenant les magnifiques Apérisitas, aux saveurs fabuleuses ! <strong>Nouveau parfum : Gout Cacahuète ! Spécial OPS !</p>
+                    <a class="btn btn-primary btn-xl js-scroll-trigger" href="#produits">J'achète !</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+   
+    <!-- Produits -->
+   
+    <section id="produits">
+       <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Notre gamme de produits</h2>
+                    <hr class="my-4">
+                    <div id="space"></div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row text-center">
+
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="card">
+                        <img class="card-img-top" src="http://placehold.it/500x325" alt="">
+                        <div class="card-body">
+                            <h4 class="card-title">Jambon</h4>
+                            <p class="card-text">De délicieux fromages, goût jambon, à la texture fondantes pour un apéritif convivial en famille.</p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#" class="btn btn-primary"  data-toggle="modal" data-target=".shopModal">J'achète !</a>
+                            <input type="number">
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="card">
+                        <img class="card-img-top" src="http://placehold.it/500x325" alt="">
+                        <div class="card-body">
+                            <h4 class="card-title">Cacahuète</h4>
+                            <p class="card-text">Une nouvelle gamme salée, pour retrouver le goût intense et authentique des cacahuètes. Spécial OPS !</p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#" class="btn btn-primary"  data-toggle="modal" data-target=".shopModal">J'achète !</a>
+                            <input type="number">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="card">
+                        <img class="card-img-top" src="http://placehold.it/500x325" alt="">
+                        <div class="card-body">
+                            <h4 class="card-title">How High et fine herbes</h4>
+                            <p class="card-text">Les Incraquables, leurs goûts trop bons sont à partager avec toute la famille !</p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#" class="btn btn-primary"  data-toggle="modal" data-target=".shopModal">J'achète !</a>
+                            <input type="number">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="card">
+                        <img class="card-img-top" src="http://placehold.it/500x325" alt="">
+                        <div class="card-body">
+                            <h4 class="card-title">Salade Tomates Oignons</h4>
+                            <p class="card-text">Inclus des sauces Samouraï et Blanches, chef ! Sur place ou à emporter ?</p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#" class="btn btn-primary"  data-toggle="modal" data-target=".shopModal">J'achète !</a>
+                            <input type="number">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+   <!-- Notre entreprise -->
+   
+    <section class="bg-primary" id="issou">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-heading text-white">Viens chercher bonheur !</h2>
+                    <hr class="light my-4">
+                    <p class="text-faded mb-4">Salut, c'est Issou ! Tu veux des Apérisitas pas cher ? On sait déjà que tu nous aimes beaucoup, On te propose que tu ailles dans une supérette et que tu achètes Apétisitas chez ton marchand préféré. Tu mets Apérisitas dans ta bouche et c'est bonheur tout de suite ! C'est un pack de 50 fromages ! 50 FROMAGES ! Tu te sens bien dans ta tête, tu te sens bien dans ton corps, va chercher bonheur chez ton marchand, va, va !</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    
+    <!-- Contact -->
+    
+    <section id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-heading">Il est pas frais ton fromage ?</h2>
+                    <hr class="my-4">
+                    <p class="mb-5">COMMENT CA, IL EST PAS FRAIS, MON FROMAGE ?? VIENS, ENVOIES MOI UN MAIL OU APPELLES MOI QUE JE TE MONTRE COMMENT QU'IL EST FRAIS, MON FROMAGE !!</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 ml-auto text-center">
+                    <i class="fa fa-phone fa-3x mb-3 sr-contact"></i>
+                    <p>01-23-45-67-89</p>
+                </div>
+                <div class="col-lg-4 mr-auto text-center">
+                    <i class="fa fa-envelope-o fa-3x mb-3 sr-contact"></i>
+                    <p>
+                        <a href="mailto:your-email@your-domain.com">ilestpasfrais@monfromage.com</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="vendor/scrollreveal/scrollreveal.min.js"></script>
+    <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/creative.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+</body>
+
+</html>

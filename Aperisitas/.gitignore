@@ -1,0 +1,17 @@
+.idea
+
+package.json
+
+package-lock.json
+
+LICENSE
+
+gulpfile.js
+
+.travis.yml
+
+img/
+
+scss/
+
+vendor/

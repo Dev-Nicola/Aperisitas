@@ -1,0 +1,28 @@
+#aperiRond {
+    background-color: #6c757d;
+}
+
+#aperisitasImg {
+    width: 100px;
+    height: 100px;
+    display: inline;
+}
+
+#acheter {
+    width: 100%;
+    margin: 20px 0px 20px 0px;
+}
+
+#form {
+    background-color: #2e3133;
+    padding: 0px;
+}
+
+#nom {
+    margin-left: 10px;
+    display: inline;
+}
+
+#nb {
+    display: inline;
+}
