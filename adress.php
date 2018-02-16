@@ -1,34 +1,36 @@
 <?php
 session_start();
 
-function createAdress($streetnumber, $streetname, $postalcode, $city, $country){
-    $error = '';
-
-    //var_dump (is_numeric($streetnumber));
-    //var_dump (is_numeric($postalcode));
-
+function createAddress($streetnumber, $streetname, $postalcode, $city, $country){
+    $error = 'Votre adresse a bien été enregistrée.';
 
     if (!is_numeric($streetnumber)){
     $error = 'Utilisez UNIQUEMENT des chiffres pour le numéro de rue!';
-    trigger_error($error, E_USER_ERROR);
     } elseif(!is_numeric($postalcode)){
         $error = 'Utilisez UNIQUEMENT des chiffres pour le code postal!';
-        trigger_error($error, E_USER_ERROR);
+    } elseif(empty(($streetnumber) || ($streetname) || ($postalcode) || ($city) || ($country))) {
+        $error = 'Vous devez remplir tous les champs du formulaire!';
+    } elseif (!empty( ($streetname) || ($city) || ($country))){
+        $arrayForm = array($streetname, $city, $country);
+        foreach($arrayForm as $elementForm){
+            if(ctype_digit($elementForm)){
+                $error = 'Vous ne pouvez pas pas utiliser de chiffres dans les cases "nom de rue", "nom de ville" et 
+                nom de pays"';
+            }
+        }
     }
 
-    if (empty(($streetnumber) || ($streetname) || ($postalcode) || ($city) || ($country))) {
-        $error = 'Vous devez remplir tous les champs du formulaire!';
-        trigger_error($error, E_USER_ERROR);
-    }
+    return $error;
 }
 
-//createAdress($_POST['streetnumber'], $_POST['streetname'], $_POST['postalcode'], $_POST['city'], $_POST['country']);
+if(!empty($_POST['streetnumber'] || $_POST['streetname'] || $_POST['postalcode'] || $_POST['city'] || $_POST['country'])) {
+    $message_error = createAddress($_POST['streetnumber'], $_POST['streetname'],$_POST['postalcode'], $_POST['city'], $_POST['country']);
 
-function lengthPassword($password){
-    $error ='';
+    $_SESSION['message_error'] = $message_error;
+    header('Location: form.php'); // changer selon la page du formulaire
+} elseif(empty($_POST['streetnumber'] || $_POST['streetname'] || $_POST['postalcode'] || $_POST['streetname'] || $_POST['country'])) {
+    $message_error = createAddress($_POST['streetnumber'], $_POST['streetname'], $_POST['postalcode'], $_POST['city'], $_POST['country']);
 
-    if(strleng($password) < 12 ){
-        $error = 'Votre mot de passe est trop court. Veuillez entrer un mot de passe de 12 caractères ou plus.';
-        trigger_error($error,E_USER_ERROR);
-    }
+    $_SESSION['message_error'] = $message_error;
+    header('Location: form.php'); // changer selon la page du formulaire
 }
